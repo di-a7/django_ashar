@@ -1,0 +1,58 @@
+# Django: web development python based framework
+# fullstack : frontend(user interface), backend(data, database, table, datatype)
+
+MVT Architecture:
+M: Models: data, tables, datatype
+V: Views: Logics (models and templates interacts)
+T: Templates: user interface
+
+# Virtual environment:
+# install virtual environment
+pip install virtualenv  
+
+# create virtual environment
+"python -m venv env" or "virtualenv env"  [env is the name of virtual environment]
+
+# activate virtual environment
+env\Scripts\activate       [cmd, powershell]
+source env/Scripts/activate      [bash/ios]
+
+# deactivate virtual environment
+deactivate
+
+# install Django
+pip install Django
+
+# configuration folder
+django-admin startproject project_name .     ['.' is optional]
+# D:\Teach\ashar\django\project       [path with .]
+# D:\Teach\ashar\django\project\project       [path without .]
+
+# start server
+python manage.py runserver     # " ctrl c " to stop server   
+
+# create app
+python manage.py startapp app_name
+
+# shell activate
+python manage.py shell
+
+# get all objects from models
+model_name.objects.all()      select * from todolist
+
+# create object
+model_name.objects.create(field1 = "..", fields2 = "...", ....) 
+
+# Retrieve: single data fetch
+a = model_name.objects.get(id = 1)
+
+# Update:
+a.field1  = "new_data"
+a.field2 = "new_data"
+a.save()
+
+# Delete:
+a.delete()
+
+# filtering
+model_name.objects.filter(field1= "..", field2 = "...", field3 = "...")

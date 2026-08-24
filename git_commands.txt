@@ -1,0 +1,66 @@
+# initialize git
+git init 
+
+# git global configuration
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+
+# add files and folder to git repo
+git add abc.txt         [add specified file]
+git add .               [add multiple files]
+
+# commit
+git commit -m "message"
+
+# remove added file from git
+git rm --cached file_name
+
+# view the all commits 
+git log
+
+# view current status of folder
+git status
+
+# view all branches
+git branch
+
+# create new branch
+git branch branch_name
+
+# rename branch name
+git branch -M main
+
+# switch branch
+git checkout branch_name
+git switch branch_name
+
+# merge branches
+git merge branch_name
+
+# check remote connection 
+git remote --v
+
+# push (local to remote)
+git push -u origin main             [first push]
+git push
+
+git push origin branch_name
+
+# pull data from remote(github)
+git pull
+
+# clone remote repo
+git clone https://github.com/di-a7/demo_a.git
+
+# create new file, insert some data and add, commit to git
+# git initialize in ashar folder, add, commit 
+
+# this is changes in login branch
+
+# login branch github
+this is logput branch
+
+# ashar folder: initialize, add, commit
+# creaste new git repo
+# add git remote to local
+# ashar folder push 
