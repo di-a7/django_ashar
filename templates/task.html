@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}List Task{% endblock title %}
+
+{% block body %}
+<div class="container">
+   <table class="table">
+         <thead>
+         <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
+         </tr>
+         </thead>
+         <tbody>
+      {% for task in tasks %}    {% comment %} task = {"title":"name2","status":True}{% endcomment %}
+         <tr>
+            <th scope="row">{{task.id}}</th>
+            <td>{{task.title}}</td>
+            <td>
+               {% if task.status %}
+               <span class="text-success">Complete</span>
+               {% else %}
+               <span class="text-danger">Pending</span>
+               {% endif %}
+            </td>
+         </tr>
+         {% endfor %}
+         </tbody>
+   </table>
+</div>
+
+
+{% endblock body %}

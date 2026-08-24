@@ -16,7 +16,3 @@ class Todolist(models.Model):
 # migration file -> python manage.py makemigrations
 # migrate to database/database changes -> python manage.py migrate
 
-# git initializer
-# github repo
-# add gitignore file
-# push into github

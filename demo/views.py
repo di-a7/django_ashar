@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Todolist
 # Create your views here.
 
 def home(request):
@@ -24,7 +25,17 @@ def aboutus(request):
    }
    return render(request, 'aboutus.html', context)
 
-# fucntion in view
-# define url to call function from view
-# define route directly in project.urls 
-# or create urls file in app and import it to project.urls 
+def tasks(request):
+   task = Todolist.objects.all()
+   context = {
+      'tasks':task
+   }
+   return render(request, 'task.html', context)
+
+def task_details(request,id):
+   task = Todolist.objects.get(id=id)
+   print(task.title)
+   context = {
+      'task':task
+   }
+   return render(request,'get.html',context)

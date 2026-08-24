@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Details{% endblock title %}
+
+{% block body %}
+
+<div class='container'>
+   <form>
+      <div class="mb-3">
+         <label for="exampleInputEmail1" class="form-label">Title</label>
+         <input type="text" class="form-control" id="exampleInputEmail1" value={{task.title}} aria-describedby="emailHelp">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+   </form>
+{% comment %} {{task.id}}
+{{task.title}}
+{{task.status}} {% endcomment %}
+</div>
+{% endblock body %}
