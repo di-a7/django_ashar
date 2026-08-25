@@ -10,6 +10,7 @@
             <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Status</th>
+            <th scope="col">Actions</th>
          </tr>
          </thead>
          <tbody>
@@ -24,6 +25,12 @@
                <span class="text-danger">Pending</span>
                {% endif %}
             </td>
+            <td>
+               <a href={{task.id}}/status/ class = 'btn btn-success'>Mark</a>
+               <a href={{task.id}}/edit/ class = 'btn btn-primary'>Edit</a>
+               <a href={{task.id}}/delete/ class = 'btn btn-danger'>Delete</a>
+            </td>
+
          </tr>
          {% endfor %}
          </tbody>

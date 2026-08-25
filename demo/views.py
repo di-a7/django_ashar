@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Todolist
 # Create your views here.
@@ -25,17 +25,35 @@ def aboutus(request):
    }
    return render(request, 'aboutus.html', context)
 
+# {"title":"enter_data"}
+
 def tasks(request):
+   
    task = Todolist.objects.all()
-   context = {
-      'tasks':task
-   }
+   context = {'tasks':task}
    return render(request, 'task.html', context)
 
 def task_details(request,id):
    task = Todolist.objects.get(id=id)
-   print(task.title)
-   context = {
-      'task':task
-   }
+   context = {'task':task}
+   if request.method == 'POST':
+      title = request.POST.get('title')
+      task.title = title
+      task.save()
+      return redirect('/task/')
    return render(request,'get.html',context)
+
+def edit_status(request, id):
+   task = Todolist.objects.get(id=id)
+   task.status = True
+   task.save()
+   return redirect('/task/')
+
+def create_task(request):
+   if request.method == 'POST':
+      title = request.POST.get('title')
+      Todolist.objects.create(title=title)
+      return redirect('/task/')
+   return render(request,'create.html')
+
+# delete function, url and change the href in task.html with the url
